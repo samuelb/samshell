@@ -1,4 +1,5 @@
-PROMPT='${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%} $(git_prompt_info)${prompt_suffix}'
+PROMPT='${return_status} %{$fg[blue]%}$(get_pwd)%{$reset_color%} ${prompt_suffix}'
+RPROMPT='$(git_prompt_info) %{$fg[blue]%}☸ ${ZSH_KUBECTL_PROMPT}%{$reset_color%}'
 
 local return_status="%(?:%{$fg_bold[green]%}%?:%{$fg_bold[red]%}%?)"
 
@@ -20,7 +21,7 @@ function get_pwd(){
   echo $prompt_short_dir
 }
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[green]%}⎇ "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
