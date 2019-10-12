@@ -1,5 +1,8 @@
 # samshell
-A minimalist zsh theme with git status decorations
+
+A minimalist zsh theme with git, kubernetes and python virtualenv decorations.
+
+![](demo.png)
 
 # Installation
 
