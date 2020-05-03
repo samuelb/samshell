@@ -1,17 +1,17 @@
 # samshell
 
-A minimalist zsh theme with git, kubernetes and python virtualenv decorations.
+A minimalist zsh theme with Git, Kubernetes and Python virtualenv decorations.
 
 ![](demo.png)
 
 ## Features
 
-- show kubernetes context and namespace
-- show current git branch
-- indicates uncommited changes 
-- indicates when a python virtualenv is loaded
-- show the return code of the previous executed command
-- displays path relative to git root
+- Show Kubernetes context and namespace
+- Show current Git branch
+- Indicates uncommited changes 
+- Indicates when a Python virtualenv is loaded
+- Show the return code of the previous executed command
+- Displays path relative to git root
 
 ## Installation
 
@@ -28,6 +28,11 @@ echo 'ZSH_THEME="samshell"' >> ~/.zshrc
 ```
 antigen theme samuelb/samshell
 ```
+
+## Configuration
+
+To disable the Kubernetes information, add `ZSH_SAMSHELL_KUBECTL_PROMPT=false` to
+your .zshrc.
 
 ## Credits
 
