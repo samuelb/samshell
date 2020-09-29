@@ -6,7 +6,7 @@ if [[ -z $ZSH_SAMSHELL_KUBECTL_PROMPT ]]; then
 fi
 
 function kubectl_prompt() {
-    if $ZSH_SAMSHELL_KUBECTL_PROMPT; then
+    if [[ ! -z $ZSH_KUBECTL_PROMPT ]] && $ZSH_SAMSHELL_KUBECTL_PROMPT; then
         echo "%{$FG[111]%}☸ ${ZSH_KUBECTL_PROMPT}"
     fi
 }
