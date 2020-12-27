@@ -29,6 +29,12 @@ echo 'ZSH_THEME="samshell"' >> ~/.zshrc
 antigen theme samuelb/samshell
 ```
 
+### With zgen
+
+```
+zgen load samuelb/samshell samshell
+```
+
 ## Configuration
 
 To disable the Kubernetes information, add `ZSH_SAMSHELL_KUBECTL_PROMPT=false` to
