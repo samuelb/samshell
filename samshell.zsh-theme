@@ -1,5 +1,5 @@
-typeset -gr __samshell_return_status="%(?:%{$fg_bold[green]%}%?:%{$fg_bold[red]%}%?)"
-typeset -gr __samshell_prompt_suffix="%{$fg[white]%}➜%{$reset_color%} "
+typeset -g __samshell_return_status="%(?:%{$fg_bold[green]%}%?:%{$fg_bold[red]%}%?)"
+typeset -g __samshell_prompt_suffix="%{$fg[white]%}➜%{$reset_color%} "
 
 if [[ -z $ZSH_SAMSHELL_KUBECTL_PROMPT ]]; then
     ZSH_SAMSHELL_KUBECTL_PROMPT=true
@@ -22,7 +22,8 @@ function __samshell_get_pwd() {
         prompt_short_dir=%~
     else
         parent=${git_root%\/*}
-        prompt_short_dir=${PWD#$parent/}
+        # escape %, the prompt would otherwise expand it in directory names
+        prompt_short_dir=${${PWD#$parent/}//\%/%%}
     fi
     echo $prompt_short_dir
 }
